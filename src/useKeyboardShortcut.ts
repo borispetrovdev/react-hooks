@@ -1,24 +1,17 @@
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect } from 'react';
 
 type KeyboardShortcutOptions = {
   predicate?: () => boolean;
   handler: () => void | Promise<void>;
   keys: {
     modifierKey?: ModifierKey;
-    key: KeyboardEvent["key"];
+    key: KeyboardEvent['key'];
   };
 };
 
-type ModifierKey = keyof Pick<
-  KeyboardEvent,
-  "metaKey" | "shiftKey" | "ctrlKey"
->;
+type ModifierKey = keyof Pick<KeyboardEvent, 'metaKey' | 'shiftKey' | 'ctrlKey'>;
 
-const useKeyboardShortcut = ({
-  predicate,
-  handler,
-  keys: { modifierKey, key },
-}: KeyboardShortcutOptions) => {
+const useKeyboardShortcut = ({ predicate, handler, keys: { modifierKey, key } }: KeyboardShortcutOptions) => {
   const handleShortcut = useCallback(
     (event: KeyboardEvent) => {
       if (predicate && !predicate()) return;
@@ -30,9 +23,9 @@ const useKeyboardShortcut = ({
   );
 
   useEffect(() => {
-    document.addEventListener("keydown", handleShortcut);
+    document.addEventListener('keydown', handleShortcut);
     return () => {
-      document.removeEventListener("keydown", handleShortcut);
+      document.removeEventListener('keydown', handleShortcut);
     };
   }, [handleShortcut]);
 };
