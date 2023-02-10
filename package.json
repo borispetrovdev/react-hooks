@@ -1,0 +1,33 @@
+{
+  "name": "react-hooks",
+  "version": "1.0.0",
+  "description": "A collection of React hooks written by Boris Petrov (Github: @borispetrovdev) ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/borispetrovdev/react-hooks.git"
+  },
+  "keywords": [
+    "React",
+    "hooks",
+    "utilities",
+    "useEffect",
+    "useState"
+  ],
+  "author": "Boris Petrov",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/borispetrovdev/react-hooks/issues"
+  },
+  "homepage": "https://github.com/borispetrovdev/react-hooks#readme",
+  "dependencies": {
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.27",
+    "typescript": "^4.9.5"
+  }
+}
